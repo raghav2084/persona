@@ -1,0 +1,6 @@
+target/**
+.settings/** 
+.project 
+.classpath 
+.springBeans
+.DS_Store
