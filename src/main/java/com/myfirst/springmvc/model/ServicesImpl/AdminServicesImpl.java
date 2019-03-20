@@ -23,7 +23,6 @@ import com.amazonaws.services.dynamodbv2.model.Condition;
 import com.myfirst.springmvc.model.Entity.Admin;
 import com.myfirst.springmvc.model.Entity.AuthenticationResponse;
 import com.myfirst.springmvc.model.Entity.Employees;
-import com.myfirst.springmvc.model.utils.AWSProperties;
 
 @Repository
 public class AdminServicesImpl {
@@ -43,7 +42,7 @@ public class AdminServicesImpl {
 	static DynamoDB dynamoDB = new DynamoDB(client);
 	//static Admin a = null;
 	static AuthenticationResponse authenticationResponse ;
-	static AWSProperties prop = new AWSProperties();
+	
 	
 	
 	
