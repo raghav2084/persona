@@ -1,1 +1,1 @@
-web: java -jar target/springmvc-1.0.0-BUILD-SNAPSHOT.war
+web: java -jar target/Persona-POC.war
