@@ -1,1 +1,1 @@
-web: java -jar war/Persona-POC.war
+web: java -jar target/Persona-POC.war
