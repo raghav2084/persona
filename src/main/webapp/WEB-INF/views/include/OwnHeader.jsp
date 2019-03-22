@@ -10,6 +10,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	
 </head>
 <body>
 	<div class="container">

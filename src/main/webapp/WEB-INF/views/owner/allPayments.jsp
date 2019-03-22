@@ -8,9 +8,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link
+<!--  <link
 	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
 	rel="stylesheet" type="text/css" />
+-->	
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
 <jsp:include page="../include/OwnHeader.jsp" />
 <title>Persona | All Payments</title>
@@ -236,8 +238,6 @@
 
 
 	</div>
-	<!--  <script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  -->
-	<!-- <script	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>  -->
 	<!-- end of container -->
  	<script src="<c:url value="/resources/js/NavBarActiveHeaderJS.js" />" /></script>
 	<script src="<c:url value="/resources/js/allpaymentJS.js" />" /></script>

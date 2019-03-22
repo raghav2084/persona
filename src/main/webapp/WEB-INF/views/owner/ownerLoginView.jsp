@@ -3,12 +3,14 @@
 <%@ page buffer="16kb"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--for adding favicon -->
+	<link rel="shortcut icon" type="image/png" href="resources/images/favicon.ico"/>
 
 <jsp:include page="../include/OwnHeader.jsp" />
 <title>Persona | Home</title>
@@ -36,9 +38,12 @@
 						<div class="col-sm-4">
 							<div class="input-group">
 								<span class="input-group-addon"><span
-									class="glyphicon glyphicon-phone-alt"></span></span> <input
-									type="text" class="form-control"
-									placeholder="Customer Phone Number" required
+									class="glyphicon glyphicon-phone-alt"></span></span> 
+									<input
+									type="number" class="form-control"
+									oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+									maxlength="10"
+									placeholder="Mobile Number (xxx-xxx-xxxx)" required
 									name="customerPhoneNumber">
 							</div>
 						</div>

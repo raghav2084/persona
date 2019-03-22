@@ -44,8 +44,10 @@
 								<span class="input-group-addon"><span
 									class="glyphicon glyphicon-phone-alt"></span></span> <input
 									type="number" class="form-control"
-									placeholder="Customer Phone Number" required
-									name="customerPhoneNumber" id="customerPhoneNumberID" data-toggle="customerPhoneNumberIDtooltip" data-original-title="Phone number must be equal to 10 digits and cannot be left blank">
+									oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+									maxlength="10"
+									placeholder="Mobile Number (xxx-xxx-xxxx)" required
+									name="customerPhoneNumber">
 							</div>
 						</div>
 					</div>
