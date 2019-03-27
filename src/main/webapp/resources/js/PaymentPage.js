@@ -55,6 +55,46 @@ $(function() {
 
 			});
 
+	//Mobile phone verification on out of focus
+	//if digits entered between 1-10 digits
+	//note : if input is blank this code will check
+	//that but will not trigger any error.
+	$('#customerPhoneNumberID').focusout(function() {
+		var number = $(this).val();
+		var div = $(this).closest("div");
+		 var hasErrorClass = $(div).hasClass("has-error");
+		//alert(hasErrorClass);
+		//less than 10 digits
+		if(number.length > 0 && number.length < 10)
+		{	
+			
+				//add error class
+				div.addClass("has-error");
+				//show tooltip with message
+				$('[data-toggle="customerPhoneNumberIDtooltip"]').tooltip({
+			        placement : 'auto',
+			        
+			    }).tooltip('show');
+		}else{
+			//if 10 digits - remove error class
+			div.removeClass("has-error");
+			$('[data-toggle="customerPhoneNumberIDtooltip"]').tooltip('destroy')
+		}
+	});
+	
+	//
+	$('#customerPhoneNumberID').keyup(function(){
+		//alert("ke");
+		var number = $(this).val();
+		var div = $(this).closest("div");
+		if(number.length == 10)
+			{
+			//if 10 digits - remove error class
+			div.removeClass("has-error");
+			$('[data-toggle="customerPhoneNumberIDtooltip"]').tooltip('destroy')
+			}
+	});
+	
 	// used to copy Initial amount to Final Amount field
 	$('#initialAmount').change(function() {
 		$('#finalAmount').val($(this).val());
@@ -62,13 +102,21 @@ $(function() {
 
 	// Disabling Discount and Coupons field on selecting radio button
 	$("input[type='radio'][name=a]").click(function() {
+		//if discount radio button is clicked
 		if ($(this).val() == 'discountradiovalue') {
-			$("#DiscontSelectedID").prop("disabled", false);
+			//discount text input is enabled
+			$('#DiscontSelectedID').prop('disabled', false);
+			//clearning the Coupon Number input text
+			$('#couponstextID').val('');
+			//alert("fygvgvk");
+			//coupon text input is disabled
 			$("#couponstextID").prop("disabled", true);
-
-		} else if ($(this).val() == 'couponsradiovalue') {
-
+		} 
+		//if coupon radio button is clicked
+		else if ($(this).val() == 'couponsradiovalue') {
 			$("#couponstextID").prop("disabled", false);
+			//clearning the Discount input text
+			$('#DiscontSelectedID').val('');
 			$("#DiscontSelectedID").prop("disabled", true);
 
 		}
@@ -81,10 +129,19 @@ $(function() {
 
 	}
 
-	// reset button enabling discount & coupons fields if they are disabled.
+	// for reset button to:
+	// reset discount & coupons fields if they are disabled.
+	//and remove all "has-error" class from all
+	//inputs in the form
 	$("#resteButtonID").click(function() {
 		$("#couponstextID").prop("disabled", true);
 		$("#DiscontSelectedID").prop("disabled", true);
+		//alert("resteButton clicked");
+		$(".input-group").removeClass("has-error");
+		//remove all the tooltips associated with inputs
+		$(".tooltip").tooltip('destroy');
+		//hiding discout & coupon panel
+		$("#DiscountCheckBox").removeClass("in");
 	});
 
 	var currentdate = new Date();
@@ -121,7 +178,7 @@ $(function() {
 	//$('#todaysdate').text(date);
 
 	//employee payment submit button
-	$('#empPaySubmitButtonID').click(function(e) {
+	$('#empPaySubmitButtonID, #ownPaySubmitButtonID').click(function(e) {
 		if (!validate2('customerNameID'))
 		{
 			return false;
@@ -211,5 +268,5 @@ function validate2(id) {
 		$('[data-toggle="'+id+'tooltip"]').tooltip('destroy')
 		return true;
 	}
-
 }
+

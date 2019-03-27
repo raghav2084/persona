@@ -46,8 +46,11 @@
 									type="number" class="form-control"
 									oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 									maxlength="10"
+									id="customerPhoneNumberID"
 									placeholder="Mobile Number (xxx-xxx-xxxx)" required
-									name="customerPhoneNumber">
+									name="customerPhoneNumber"
+									data-toggle="customerPhoneNumberIDtooltip"
+									data-original-title="Number cannot left blank or be less than 10 digits">
 							</div>
 						</div>
 					</div>
@@ -116,6 +119,8 @@
 										value="discountradiovalue" type="radio">
 									</span> <input type="number" class="form-control"
 										placeholder="Discount" id="DiscontSelectedID"
+										oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+										maxlength="2"
 										name="discountAmount"> <span class="input-group-addon">%</span>
 
 								</div>

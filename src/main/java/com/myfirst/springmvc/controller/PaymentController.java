@@ -294,8 +294,9 @@ public class PaymentController {
 		//String s = ConvertDateFormatStringToString2(payment.getPaymentDate());
 		String s = ConvertStringToISO(payment.getPaymentDate());
 		payment.setPaymentDate(s);
-
+		
 		LastSavedPK newPayID = new LastSavedPK();
+		
 
 		LastSavedPK lastSavedPK = lastsaved.getLastSavedPKCount("Payments#paymentID");
 		logger.info("lastSavedPK Payments#paymentID: " + lastSavedPK.getLastSavedPKValue());

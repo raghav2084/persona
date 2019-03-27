@@ -32,7 +32,7 @@
 								<span class="input-group-addon"><span
 									class="glyphicon glyphicon-user"></span></span> <input type="text"
 									class="form-control" placeholder="Customer Name" required
-									name="customerName">
+									name="customerName" id="customerNameID" data-toggle="customerNameIDtooltip" data-original-title="Name cannot be blank">
 							</div>
 						</div>
 						<div class="col-sm-4">
@@ -43,8 +43,11 @@
 									type="number" class="form-control"
 									oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 									maxlength="10"
+									id="customerPhoneNumberID"
 									placeholder="Mobile Number (xxx-xxx-xxxx)" required
-									name="customerPhoneNumber">
+									name="customerPhoneNumber"
+									data-toggle="customerPhoneNumberIDtooltip"
+									data-original-title="Number cannot left blank or be less than 10 digits">
 							</div>
 						</div>
 					</div>
@@ -58,7 +61,8 @@
 									<span class="input-group-addon"><span
 										class="glyphicon glyphicon-calendar"></span></span> <input
 										type="text" id="cal" class="form-control" required
-										name="paymentDate" placeholder="Appointment Time"> <span
+										name="paymentDate" placeholder="Appointment Time" data-toggle="caltooltip" data-original-title="Appointment Time cannot be blank"> 
+										<span
 										class="input-group-btn"><button type="button"
 											class="btn btn-default" id="myNowButton">Now</button> </span>
 								</div>
@@ -80,7 +84,8 @@
 							<div class="input-group">
 								<span class="input-group-addon">&#x20B9;</span> <input
 									type="number" class="form-control" placeholder="Amount"
-									id="initialAmount" name="initialAmount"> <span
+									id="initialAmount" name="initialAmount" data-toggle="initialAmounttooltip" data-original-title="Amount cannot be blank">
+									<span
 									class="input-group-addon">.00</span>
 							</div>
 						</div>
@@ -111,6 +116,8 @@
 										value="discountradiovalue" type="radio">
 									</span> <input type="number" class="form-control"
 										placeholder="Discount" id="DiscontSelectedID"
+										oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+										maxlength="2"
 										name="discountAmount"> <span class="input-group-addon">%</span>
 
 								</div>
@@ -131,7 +138,7 @@
 					<div class="row">
 						<!-- row 5 starts -->
 						<div class="col-sm-4">
-							<select class="form-control" name="serviceProviderName">
+							<select class="form-control" name="serviceProviderName" id="serviceProviderNameID" data-toggle="serviceProviderNameIDtooltip" data-original-title="Amount cannot be blank">
 								<option value="">Select Stylist/Service Provider</option>
 								<c:forEach var="EmpNames" items="${AllEmpNames}" varStatus="i">
 									<option>${EmpNames.empName}</option>
@@ -142,6 +149,7 @@
 					</div>
 					<!-- row 5 ends -->
 					</br>
+						<label data-toggle="SelectServicestoottip" data-original-title="Choose atleast one Service">Select Services: </label>
 					<div class="row">
 						<!-- row 6 starts -->
 
@@ -166,7 +174,7 @@
 					</div>
 					<!-- row end -->
 					</br>
-					<button class="btn btn-md btn-primary" type="submit">Submit</button>
+					<button class="btn btn-md btn-primary" type="submit" data-loading-text="Saving..." id="ownPaySubmitButtonID">Submit</button>
 					<button class="btn btn-md btn-info" id="resteButtonID" type="reset">Reset</button>
 				</form>
 			</div>
