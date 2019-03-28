@@ -79,12 +79,18 @@
 									<div class="form-group">
 										<label for="emp-name" class="control-label">Employee
 											Name:</label> <input type="text" class="form-control" id="emp-name"
-											name="empName">
+											name="empName"
+											data-toggle="emp-nametooltip" 
+											data-original-title="Name cannot be blank">
 									</div>
 									<div class="form-group">
 										<label for="emp-phone" class="control-label">Phone
-											Number:</label> <input type="text" class="form-control"
-											id="emp-phone" name="empPhoneNum">
+											Number:</label> <input type="number" class="form-control"
+											id="emp-phone" name="empPhoneNum"
+											oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+											maxlength="10"
+											data-toggle="emp-phonetooltip"
+											data-original-title="Number cannot left blank or be less than 10 digits">
 									</div>
 									<div class="form-group">
 										<label for="emp-sex" class="control-label">Sex:</label> <select
@@ -122,12 +128,18 @@
 									<div class="form-group">
 										<label for="emp-name" class="control-label">Employee
 											Name:</label> <input type="text" class="form-control"
-											id="edit-emp-name" name="empName">
+											id="edit-emp-name" name="empName"
+											data-toggle="edit-emp-nametooltip" 
+											data-original-title="Name cannot be blank">
 									</div>
 									<div class="form-group">
 										<label for="emp-phone" class="control-label">Phone
 											Number:</label> <input type="text" class="form-control"
-											id="edit-emp-phone" name="empPhoneNum">
+											id="edit-emp-phone" name="empPhoneNum"
+											oninput="javascript: if (this.value.length  > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+											maxlength="10"
+											data-toggle="edit-emp-phonetooltip"
+											data-original-title="Number cannot left blank or be less than 10 digits">
 									</div>
 									<div class="form-group">
 										<label for="emp-sex" class="control-label">Sex:</label> <select

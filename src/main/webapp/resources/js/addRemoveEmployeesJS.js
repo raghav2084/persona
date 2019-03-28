@@ -63,6 +63,14 @@ $(function() {
 	//Updating employee
 	$('#editEmpButtonID').click(function(e) {
 
+		if (!validate('edit-emp-name')) {
+
+			return false;
+		}
+		if (!validate('edit-emp-phone')) {
+
+			return false;
+		}
 		var $btn = $(this);
 		$btn.button('loading');
 
@@ -107,18 +115,67 @@ $(function() {
 				}, 1000);
 			
 			});
+	
+	//phone number validation 
+	//if digits b/w 1-9
+	//add error class and tooltip
+	$('#emp-phone, #edit-emp-phone').keyup(function(){
+		//alert("ke");
+		var number = $(this).val();
+		var div = $(this).closest("div");
+		if(number.length == 10)
+			{
+			//if 10 digits - remove error class
+			div.removeClass("has-error");
+			$('[data-toggle="'+$(this).attr('id')+'tooltip"]').tooltip('destroy')
+			}
+		//if del is clicked, bring back error and tooltip
+		else {
+				div.addClass("has-error");
+				//alert("Validation Error" +$("#"+id).val() );
+				$('[data-toggle="'+$(this).attr('id')+'tooltip"]').tooltip('show').tooltip({
+			        placement : 'top'
+			    });
+			}
+	});
+
+	//keypress validation on name
+	$('#emp-name, #edit-emp-name').keyup(function(){
+		//alert("asdad "+$(this).attr('id')+" sdas");
+		var div = $(this).closest("div");
+		if ($(this).val() == null || $(this).val() == ""){
+			
+			div.addClass("has-error");
+			//alert("Validation Error" +$("#"+id).val() );
+			//alert('[data-toggle="'+$(this).attr('id')+'tooltip"]');
+			$('[data-toggle="'+$(this).attr('id')+'tooltip"]').tooltip('show').tooltip({
+		        placement : 'top'
+		    });
+		}else {
+			div.removeClass("has-error");
+			$('[data-toggle="'+$(this).attr('id')+'tooltip"]').tooltip('destroy');
+			
+		}
+	});
+	
 });//end of main function
 
 function validate(id) {
+	var div = $("#" + id).closest("div");
 
-	if ($("#" + id).val() == null || $("#" + id).val() == "") {
-		var div = $("#" + id).closest("div");
+	//alert(div.hasClass("has-error"));
+	
+	if ($("#" + id).val() == null || $("#" + id).val() == "" || div.hasClass("has-error"))//there is already a validation error
+	 {
 		div.addClass("has-error");
 		//alert("Validation Error" +$("#"+id).val() );
+		$('[data-toggle="'+id+'tooltip"]').tooltip('show').tooltip({
+	        placement : 'top'
+	    });
 		return false;
-	} else {
-		var div = $("#" + id).closest("div");
+	}else {
 		div.removeClass("has-error");
+		$('[data-toggle="'+id+'tooltip"]').tooltip('destroy')
 		return true;
 	}
 

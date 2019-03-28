@@ -177,7 +177,7 @@ $(function() {
 			+ " " + ndate;
 	//$('#todaysdate').text(date);
 
-	//employee payment submit button
+	//employee & owner payment submit button
 	$('#empPaySubmitButtonID, #ownPaySubmitButtonID').click(function(e) {
 		if (!validate2('customerNameID'))
 		{
