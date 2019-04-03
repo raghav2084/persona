@@ -75,14 +75,7 @@
 					<!-- row 2 end -->
 					</br>
 					<div class="row">
-						<!-- row 3 start -->
-						<!-- 	<div class="col-xs-4">
-							<div class="input-group">
-								<span class="input-group-addon"><span
-									class="glyphicon glyphicon-user"></span></span> <input type="text"
-									class="form-control" placeholder="Username">
-							</div>
-						</div> -->
+						
 						<div class="col-sm-4">
 							<div class="input-group">
 								<span class="input-group-addon">&#x20B9;</span> <input
@@ -92,13 +85,7 @@
 									class="input-group-addon">.00</span>
 							</div>
 						</div>
-						<!-- <div class="col-xs-4">
-							<div class="input-group">
-								<span class="input-group-addon">$</span> <input type="text"
-									class="form-control" placeholder="US Dollar"> <span
-									class="input-group-addon">.00</span>
-							</div>
-						</div> -->
+						
 					</div>
 					<!-- row 3 end -->
 					</br>
@@ -191,12 +178,6 @@
 			<div class="panel-heading">
 				<h4 id="todaysdate">
 					 Recent Payments <span class="badge" style="font-size: 20px"> ${fn:length(paymentsList)}</span>
-					<!-- <div class="pull-right">
-						<a href="#" class="btn btn-lg btn-primary">Learn More</a>
-						 <a href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-new-window"></span></a>
-						<a href="" class="btn btn-xs btn-default" id="detailsbutton">Details</a>
-
-					</div> -->
 				</h4>
 			</div>
 			<div class="panel-body">

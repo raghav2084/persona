@@ -53,13 +53,6 @@
 				<h4>
 					Payments <span class="badge" style="font-size: 20px"id="TotalPaymentBadgeID"> ${fn:length(paymentsList)}</span>
 						<small style="color: white">${msg}</small>
-					<!-- <div class="pull-right">
-						<a href="#" class="btn btn-lg btn-primary">Learn More</a>
-						<button type="button" class="btn btn-default" data-toggle="modal"
-							data-target="#addEmp">
-							<span class="glyphicon glyphicon-plus"></span>
-						</button>
-					</div> -->
 				</h4>
 			</div>
 			<div class="panel-body">
@@ -157,9 +150,6 @@
 										id="edit-pay-time" name="paymentDate" readonly>
 								</div>
 								<div class="form-group">
-									<!-- <label for="emp-phone" class="control-label">Stylist: </label>
-									<input type="text" class="form-control" id="edit-pay-stylist"
-										name="serviceProviderName"> -->
 									<label for="emp-phone" class="control-label">Stylist: </label>
 									<select class="form-control" name="serviceProviderName"
 										id="edit-pay-stylist">
@@ -241,6 +231,6 @@
 	<!-- end of container -->
  	<script src="<c:url value="/resources/js/NavBarActiveHeaderJS.js" />" /></script>
 	<script src="<c:url value="/resources/js/allpaymentJS.js" />" /></script>
-<%-- <script src="<c:url value="/resources/js/DatepickerJS.js" />" /></script>	 	 --%>
+
 </body>
 </html>

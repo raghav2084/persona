@@ -88,11 +88,6 @@ public class EmployeeServicesImpl {
 			Employees e = new Employees();
 			//logger.info(iterator.next());
 			Item item = iterator.next();
-			/*logger.info(item.getString("empName").toString());
-			logger.info(item.getString("empPhoneNum").toString());
-			logger.info(item.getString("empSex").toString());
-			logger.info(item.getString("empStatus").toString());
-			*/
 			
 			e.setEmpName(item.getString("empName"));
 			e.setEmpPhoneNum(item.getString("empPhoneNum"));

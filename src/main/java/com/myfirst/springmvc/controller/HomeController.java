@@ -34,7 +34,7 @@ public class HomeController {
 	//testing to see how many times this is executed
 		@PostConstruct
 		public void init(){
-		logger.info("HomeController Init Method");	
+		//logger.info("HomeController Init Method");	
 		
 		}
 	
@@ -67,7 +67,7 @@ public class HomeController {
 		
 		try{
 					
-					//if(usertype.equals("iamemp") && adminservice.isEmpAuthenticated(lg_username, lg_password))
+					
 					if(usertype.equals("iamemp") && adminservice.isEmpAuthenticated(lg_username, lg_password).isUserAuthResponse()==true)
 					{
 						logger.info("Employee Authentication Succeed for uname "+lg_username+ " pass: "+lg_password);

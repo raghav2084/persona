@@ -221,32 +221,6 @@ public class PaymentController {
 
 	}
 
-	/*
-	 * // Delete Payments using PaymentID POST method
-	 * 
-	 * @RequestMapping(value = { "/own/deletePay" }, method =
-	 * RequestMethod.POST) public String deletePayments(@RequestParam String
-	 * deletePayModalHiddenPayName) { logger.info("deleting payment ID : " +
-	 * deletePayModalHiddenPayName); //List<Payment> allpayments = new
-	 * ArrayList<Payment>();
-	 * paymentservices.deletePayment(deletePayModalHiddenPayName); logger.info(
-	 * "Payment deleted payment ID : " + deletePayModalHiddenPayName); return
-	 * "redirect:/own/allpayments"; }
-	 */
-
-	// Edit Payments Post method
-	/*
-	 * @RequestMapping(value = { "/own/editPay" }, method = RequestMethod.POST)
-	 * public String editPay(Payment pay, Model model) { logger.info("editPay "
-	 * + pay);
-	 * 
-	 * List<Payment> allpayments = new ArrayList<Payment>(); allpayments =
-	 * paymentservices.getAllPayments(); model.addAttribute("paymentsList",
-	 * allpayments);
-	 * 
-	 * return "owner/allPayments"; }
-	 */
-
 	// payment request coming from employee page
 	@RequestMapping(value = "emp/savepayment", method = RequestMethod.POST)
 	public String SavePaymentFromEmp(Payment payment, Model model, RedirectAttributes redirectAttrs) {
@@ -265,11 +239,6 @@ public class PaymentController {
 		int i = Integer.parseInt(lastSavedPK.getLastSavedPKValue());
 		int j = i + 1;
 		String newID = Integer.toString(j);
-
-		// formatting the date
-		/*String unformattedDate = payment.getPaymentDate();
-		String formattedDate = ConvertDateFormatStringToStringWithTime(unformattedDate);
-		payment.setPaymentDate(formattedDate);*/
 
 		payment.setPaymentID(newID);
 		paymentservices.savePayment(payment);

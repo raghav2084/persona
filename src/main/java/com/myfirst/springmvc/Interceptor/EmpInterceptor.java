@@ -36,14 +36,7 @@ public class EmpInterceptor implements HandlerInterceptor {
 		if(arg0.getSession().getAttribute("loggedInUser")==null ){			
 			arg1.sendRedirect(login);
 			return false;
-		} /*else 
-		{
-			Admin a = (Admin) arg0.getSession().getAttribute("loggedInUser"); 
-			if (a.getIsOwner().equalsIgnoreCase("n")){
-				arg1.sendRedirect(login);
-				return false;				
-			}
-		}*/	
+		}
 		return true;
 	}
 

@@ -32,21 +32,10 @@ public class AdminServices {
 
 	}
 
-	/*
-	 * public boolean isAdminAuthenticated(String uname, String pass) throws
-	 * DynamoDBMappingException{ return
-	 * AdminServicesImpl.isAdminAuthenticated(uname, pass); }
-	 */
-
 	public AuthenticationResponse isAdminAuthenticated(String uname, String pass) throws DynamoDBMappingException {
 		return AdminServicesImpl.isAdminAuthenticated(uname, pass);
 	}
 
-	/*
-	 * public boolean isEmpAuthenticated(String uname, String pass) throws
-	 * DynamoDBMappingException{ return
-	 * AdminServicesImpl.isEmpAuthenticated(uname, pass); }
-	 */
 	public AuthenticationResponse isEmpAuthenticated(String uname, String pass) throws DynamoDBMappingException {
 		return AdminServicesImpl.isEmpAuthenticated(uname, pass);
 	}

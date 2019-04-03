@@ -49,12 +49,11 @@ public class AdminServicesImpl {
 	
 	static AuthenticationResponse findByUserName(String uname) throws DynamoDBMappingException {
 		client.setEndpoint(ENDPOINT);
-		System.out.println("ENDPOINT: " + ENDPOINT);
+		//
 		/*
-		System.out.println("READING SYS ENV - ENV "+System.getenv("ENV"));
-		System.out.println("READING SYS ENV - DB_KEY "+System.getenv("DB_KEY"));
-		System.out.println("READING SYS ENV - DB_SECRET "+System.getenv("DB_SECRET"));
-		System.out.println("READING SYS ENV - AWS_ENDPOINT "+System.getenv("AWS_ENDPOINT"));
+		 * System.out.println("ENDPOINT: " + ENDPOINT);
+		 * System.out.println("READING SYS ENV - ENV "+System.getenv("ENV"));
+		 * 
 		*/
 		
 		Admin a = mapper.load(Admin.class, uname);
@@ -74,33 +73,7 @@ public class AdminServicesImpl {
 			
 		}	
 		
-	}
-	/*
-	//boolean version
-	public static boolean isAdminAuthenticated(String uname, String pass) throws DynamoDBMappingException{
-
-		boolean result = false;
-		AuthenticationResponse authResp = findByUserName(uname);
-		if (authResp.isUserAuthResponse()==true) {
-			logger.info("Inside isAdminAuthenticated service Imp ");
-			if (authResp.getAdmin().getIsOwner().equalsIgnoreCase("Y") && pass.equals(authResp.getAdmin().getUserPassword()))
-			{
-				logger.info("Owner Authenticated! User: "+uname+ " Pass: " +pass);
-				result = true;
-			}	
-			else
-		{
-			logger.info("Owner NOT Authenticated! User: "+uname+ " Pass: " +pass);
-			result = false;
-		}
-		
-	}
-		return result;	
-	}// end of isAdminAuthenticated
-	
-*/
-	
-	
+	}	
 	
 	public static AuthenticationResponse isAdminAuthenticated(String uname, String pass) throws DynamoDBMappingException{
 
@@ -125,33 +98,6 @@ public class AdminServicesImpl {
 		return ReturnAuthResp;
 	}// end of isAdminAuthenticated
 	
-	
-	
-	
-	
-	
-	/*
-	//boolean version
-	public static boolean isEmpAuthenticated(String uname, String pass) throws DynamoDBMappingException{
-		boolean result = false;
-		AuthenticationResponse authResp = findByUserName(uname);
-		if (authResp.isUserAuthResponse()==true) {
-			logger.info("Inside isEmpAuthenticated service Imp ");
-			if (authResp.getAdmin().getIsOwner().equalsIgnoreCase("N") && pass.equals(authResp.getAdmin().getUserPassword()))
-			{
-				logger.info("Emp Authenticated! User: "+uname+ " Pass: " +pass);
-				result = true;
-			}	
-			else
-		{
-			logger.info("Emp NOT Authenticated! User: "+uname+ " Pass: " +pass);
-			result = false;
-		}
-		
-	}
-		return result;	
-	}//end of isEmpAuthenticated
-	*/
 
 	public static AuthenticationResponse isEmpAuthenticated(String uname, String pass) throws DynamoDBMappingException{
 		AuthenticationResponse ReturnAuthResp = new AuthenticationResponse();
