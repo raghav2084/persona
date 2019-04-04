@@ -43,7 +43,8 @@ public class ErrorController {
     	}else{
     		logger.info("Error by un-auth user" + sessionUser);
     		RedirectMsg = "Back to Login";
-    		RedirectURL="/springmvc/";
+    		
+    		RedirectURL= System.getenv("ENV").equals("PROD") ? "/" :"/springmvc/";
     		
     	}
  
